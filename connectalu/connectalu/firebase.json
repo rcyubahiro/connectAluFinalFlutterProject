@@ -1,0 +1,25 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "connectalu",
+          "appId": "1:416607882871:android:6355c375731774013dc072",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "connectalu",
+          "configurations": {
+            "android": "1:416607882871:android:6355c375731774013dc072",
+            "ios": "1:416607882871:ios:8a5bc06b488dbde03dc072"
+          }
+        }
+      }
+    }
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}

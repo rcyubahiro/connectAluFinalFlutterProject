@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="60" fill="#10284B"/>
+  <!-- Two overlapping circles representing connection -->
+  <circle cx="45" cy="60" r="22" fill="none" stroke="#E8A33D" stroke-width="4"/>
+  <circle cx="75" cy="60" r="22" fill="none" stroke="#E8A33D" stroke-width="4"/>
+  <!-- Center link dot -->
+  <circle cx="60" cy="60" r="6" fill="#E8A33D"/>
+  <!-- ALU text -->
+  <text x="60" y="100" font-family="Roboto,sans-serif" font-size="13" font-weight="700"
+        fill="#FFFFFF" text-anchor="middle" letter-spacing="2">ALU</text>
+</svg>

@@ -1,0 +1,50 @@
+name: connectalu
+description: "ConnectALU — internship & opportunity matching platform for the ALU ecosystem."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # Navigation
+  go_router: ^14.2.0
+
+  # Firebase
+  firebase_core: ^3.15.2
+  firebase_auth: ^5.7.0
+  cloud_firestore: ^5.6.12
+  firebase_storage: ^12.1.0
+  cloud_functions: ^5.0.1
+  firebase_messaging: ^15.0.1
+
+  # Utilities
+  google_sign_in: ^6.2.1
+  image_picker: ^1.1.2
+  intl: ^0.19.0
+  cached_network_image: ^3.3.1
+  uuid: ^4.4.0
+  flutter_svg: ^2.0.10+1
+  shimmer: ^3.0.0
+
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  riverpod_generator: ^2.4.0
+  build_runner: ^2.4.9
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/

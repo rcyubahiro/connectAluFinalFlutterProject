@@ -1,0 +1,43 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.get('admin', false) == true ||
+        get(/databases/$(firestore.default.database)/documents/users/$(request.auth.uid)).data.get('role', '') == 'admin'
+      );
+    }
+
+    function isVerifiedFounderOf(startupId) {
+      return isSignedIn() && startupId in request.auth.token.get('verifiedStartups', []);
+    }
+
+    // User profile photos
+    match /user_photos/{userId}_{timestamp}.jpg {
+      allow read: if isSignedIn();
+      allow write: if isOwner(userId);
+    }
+
+    // Startup logos
+    match /startup_logos/{startupId}.jpg {
+      allow read: if isSignedIn();
+      allow write: if isVerifiedFounderOf(startupId) || isAdmin();
+    }
+
+    // Startup verification documents
+    match /startup_verification/{startupId}/{fileId} {
+      allow read: if isVerifiedFounderOf(startupId) || isAdmin();
+      allow write: if isVerifiedFounderOf(startupId) || isAdmin();
+    }
+  }
+}
